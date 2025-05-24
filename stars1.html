@@ -1,136 +1,414 @@
-<style>
-    .announcement-bar {
-        color: black;
-        padding: 10px 0;
-        overflow: hidden;
-        white-space: nowrap;
-        position: relative;
-    }
-
-    .marquee {
-        display: inline-block;
-        animation: marquee 65.00s linear infinite;
-        padding-left: 100%; /* Add initial offset */
-    }
-
-    @keyframes marquee {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-100%); }
-    }
-</style>
-
-<div class="announcement-bar">
-    <div class="marquee">
-          ⚠️ DISCLAIMER: Esports does not stream any of the channels included in this website &amp; application, all the streaming links are from third party websites available freely on the internet. We're just giving way to stream and all content is the copyright of their owner. 
-        
-         ⚠️ DISCLAIMER: Esports does not stream any of the channels included in this website &amp; application, all the streaming links are from third party websites available freely on the internet. We're just giving way to stream and all content is the copyright of their owner.
-    
-          ⚠️ DISCLAIMER: Esports does not stream any of the channels included in this website &amp; application, all the streaming links are from third party websites available freely on the internet. We're just giving way to stream and all content is the copyright of their owner.
-           ⚠️ DISCLAIMER: Esports does not stream any of the channels included in this website &amp; application, all the streaming links are from third party websites available freely on the internet. We're just giving way to stream and all content is the copyright of their owner.
-           ⚠️ DISCLAIMER: Esports does not stream any of the channels included in this website &amp; application, all the streaming links are from third party websites available freely on the internet. We're just giving way to stream and all content is the copyright of their owner.
-    </div>
-</div>
-<iframe src="https://esportspk.github.io/esports/player.html?id=star1in.m3u8"""
-    width="100%" height="800px" 
-    sandbox="allow-scripts allow-same-origin allow-modals"
-    marginheight="0" marginwidth="0" scrolling="no" frameborder="0" 
-    allowfullscreen allow="encrypted-media">
-</iframe>
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/f9746dfef85e6ec5c7141e4723441071/invoke.js"></script>
-
-<div style="text-align: center;"><br></div>
-<div id="myHeader">
-<div id="http">
-<script src="//content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
-
-<div id="player">
-</div>
-<script type="text/javascript">
-jwplayer("player").resize(480, 270);
-    jwplayer('player').setup({
-        file: https://cdn.hoichoi24.com/LIVE/tracks-v1a1/mono.ts.m3u8',
-
-playbackRateControls: [0.75, 1, 1.25, 1.5],
-        title: 'Esports Live ',
-        width: '100%',
-        aspectratio: '16:9',
-        mute: false,
-        repeat: 'true',
-        autostart:true,
-        primary: 'html5',
-        type: 'm38u',
-        setFullscreen: true,
-controls: true,
-showCode: true,
-responsive: true,
-skin: {
-  name: "glow",
-       active: "red",
-       inactive: "",
-       Background: ""
-  }
-    });
-</script>
-</div>
-
-<script>
-window.onscroll = function() {myFunction()};
-
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-	
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="bn">
+
 <head>
+
   <meta charset="UTF-8">
-  <title>Secure Page</title>
-  <script>
-    // iframe block
-    if (window.top !== window.self) {
-      window.top.location = window.self.location;
-    }
 
-    // Disable right-click
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    }, false);
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    // Block F12, Ctrl+Shift+I, Ctrl+U etc.
-    document.addEventListener('keydown', function(e) {
-      // F12
-      if (e.keyCode === 123) {
-        e.preventDefault();
-      }
-      // Ctrl+Shift+I or Ctrl+Shift+J or Ctrl+U
-      if ((e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || (e.ctrlKey && e.key === 'u')) {
-        e.preventDefault();
-      }
-    });
-  </script>
+  <title>BongoBD/Chorki-style Player</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    /* Optional: disable text selection */
+
     body {
-      user-select: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
+
+      margin: 0;
+
+      padding: 0;
+
+      font-family: 'Roboto', sans-serif;
+
+      background: #000;
+
+      color: #fff;
+
     }
+
+    
+
+    .player-container {
+
+      max-width: 1000px;
+
+      margin: 0 auto;
+
+      position: relative;
+
+    }
+
+    
+
+    #videoPlayer {
+
+      width: 100%;
+
+      background: #000;
+
+    }
+
+    
+
+    .controls {
+
+      display: flex;
+
+      align-items: center;
+
+      padding: 10px;
+
+      background: rgba(0, 0, 0, 0.7);
+
+      position: absolute;
+
+      bottom: 0;
+
+      width: 100%;
+
+      box-sizing: border-box;
+
+    }
+
+    
+
+    .play-pause, .volume, .time, .fullscreen {
+
+      margin: 0 10px;
+
+    }
+
+    
+
+    .progress-container {
+
+      flex-grow: 1;
+
+      height: 5px;
+
+      background: #333;
+
+      margin: 0 10px;
+
+      cursor: pointer;
+
+    }
+
+    
+
+    .progress-bar {
+
+      height: 100%;
+
+      background: #E50914; /* BongoBD/Chorki-style red */
+
+      width: 0%;
+
+    }
+
+    
+
+    button {
+
+      background: none;
+
+      border: none;
+
+      color: white;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+    }
+
+    
+
+    .quality-selector {
+
+      position: absolute;
+
+      top: -60px;
+
+      right: 10px;
+
+      background: rgba(0, 0, 0, 0.7);
+
+      padding: 10px;
+
+      display: none;
+
+    }
+
+    
+
+    .quality-option {
+
+      display: block;
+
+      padding: 5px;
+
+      cursor: pointer;
+
+    }
+
+    
+
+    .quality-option:hover {
+
+      color: #E50914;
+
+    }
+
   </style>
+
 </head>
 
-	<script async="async" data-cfasync="false" src="//pl26377079.profitableratecpm.com/cdeccdd75d3e2e6916a42ce9653cfb08/invoke.js"></script>
-<div id="container-cdeccdd75d3e2e6916a42ce9653cfb08"></div>
 <body>
-  <h1><h1>
-  <p></p>
+
+  <div class="player-container">
+
+    <video id="videoPlayer"></video>
+
+    <div class="controls">
+
+      <button class="play-pause"><i class="fas fa-play"></i></button>
+
+      <div class="progress-container">
+
+        <div class="progress-bar"></div>
+
+      </div>
+
+      <div class="time">00:00 / 00:00</div>
+
+      <button class="volume"><i class="fas fa-volume-up"></i></button>
+
+      <button class="quality-btn"><i class="fas fa-cog"></i></button>
+
+      <button class="fullscreen"><i class="fas fa-expand"></i></button>
+
+    </div>
+
+    <div class="quality-selector">
+
+      <div class="quality-option" data-quality="high">High (1080p)</div>
+
+      <div class="quality-option" data-quality="medium">Medium (720p)</div>
+
+      <div class="quality-option" data-quality="low">Low (480p)</div>
+
+    </div>
+
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      const video = document.getElementById('videoPlayer');
+
+      const playPauseBtn = document.querySelector('.play-pause');
+
+      const volumeBtn = document.querySelector('.volume');
+
+      const progressBar = document.querySelector('.progress-bar');
+
+      const progressContainer = document.querySelector('.progress-container');
+
+      const timeDisplay = document.querySelector('.time');
+
+      const qualityBtn = document.querySelector('.quality-btn');
+
+      const qualitySelector = document.querySelector('.quality-selector');
+
+      const fullscreenBtn = document.querySelector('.fullscreen');
+
+
+
+      // BongoBD/Chorki-style HLS stream (example)
+
+      const streamUrl = 'https://m1.merichunidya.com:999/hls/star1in.m3u8?md5=akJDsG5M-a4mps8-x5oXrA&expires=1748094583'; // Replace with actual HLS stream
+
+
+
+      let hls = new Hls();
+
+      
+
+      if (Hls.isSupported()) {
+
+        hls.loadSource(streamUrl);
+
+        hls.attachMedia(video);
+
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+
+          video.play();
+
+        });
+
+        
+
+        // Quality levels
+
+        hls.on(Hls.Events.MANIFEST_PARSED, function(event, data) {
+
+          const qualityLevels = hls.levels;
+
+          console.log('Available quality levels:', qualityLevels);
+
+        });
+
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+
+        // For Safari which supports native HLS
+
+        video.src = streamUrl;
+
+        video.addEventListener('loadedmetadata', function() {
+
+          video.play();
+
+        });
+
+      }
+
+
+
+      // Play/Pause
+
+      playPauseBtn.addEventListener('click', function() {
+
+        if (video.paused) {
+
+          video.play();
+
+          playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+
+        } else {
+
+          video.pause();
+
+          playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+
+        }
+
+      });
+
+
+
+      // Volume
+
+      volumeBtn.addEventListener('click', function() {
+
+        if (video.volume > 0) {
+
+          video.volume = 0;
+
+          volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+
+        } else {
+
+          video.volume = 1;
+
+          volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+
+        }
+
+      });
+
+
+
+      // Progress bar
+
+      video.addEventListener('timeupdate', function() {
+
+        const progress = (video.currentTime / video.duration) * 100;
+
+        progressBar.style.width = progress + '%';
+
+        
+
+        // Update time display
+
+        const currentMinutes = Math.floor(video.currentTime / 60);
+
+        const currentSeconds = Math.floor(video.currentTime % 60);
+
+        const durationMinutes = Math.floor(video.duration / 60);
+
+        const durationSeconds = Math.floor(video.duration % 60);
+
+        
+
+        timeDisplay.textContent = 
+
+          `${currentMinutes}:${currentSeconds < 10 ? '0' + currentSeconds : currentSeconds} / 
+
+           ${durationMinutes}:${durationSeconds < 10 ? '0' + durationSeconds : durationSeconds}`;
+
+      });
+
+
+
+      // Click on progress bar to seek
+
+      progressContainer.addEventListener('click', function(e) {
+
+        const pos = (e.pageX - this.offsetLeft) / this.offsetWidth;
+
+        video.currentTime = pos * video.duration;
+
+      });
+
+
+
+      // Quality selector
+
+      qualityBtn.addEventListener('click', function() {
+
+        qualitySelector.style.display = qualitySelector.style.display === 'block' ? 'none' : 'block';
+
+      });
+
+
+
+      // Fullscreen
+
+      fullscreenBtn.addEventListener('click', function() {
+
+        if (!document.fullscreenElement) {
+
+          video.requestFullscreen().catch(err => {
+
+            console.error('Fullscreen error:', err);
+
+          });
+
+        } else {
+
+          document.exitFullscreen();
+
+        }
+
+      });
+
+    });
+
+  </script>
+  
+  <script async="async" data-cfasync="false" src="//pl26377079.profitableratecpm.com/cdeccdd75d3e2e6916a42ce9653cfb08/invoke.js"></script>
+<div id="container-cdeccdd75d3e2e6916a42ce9653cfb08"></div>
+
 </body>
-  </html>
+
+</html>
